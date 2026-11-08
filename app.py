@@ -3,6 +3,10 @@ import joblib
 import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
+
+def to_dense(X):
+    return X.toarray() if hasattr(X, "toarray") else X
+
 from sklearn.metrics import (accuracy_score, roc_auc_score, precision_score,
                              recall_score, f1_score, matthews_corrcoef,
                              ConfusionMatrixDisplay, classification_report)
